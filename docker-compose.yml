@@ -4,7 +4,7 @@ services:
   backend:
     container_name: blogi-backend
     build:
-      context: .
+      context: ./backend
     networks:
       - back-tier
       - front-tier
@@ -43,6 +43,4 @@ services:
 
 networks:
   back-tier:
-    name: blogi-back-tier
   front-tier:
-    name: blogi-front-tier
