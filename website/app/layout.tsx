@@ -2,6 +2,9 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
+import Link from "next/link";
+
+import { NProgressBar } from "./_components/progress-bar-provider";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
@@ -18,6 +21,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="fa" dir="rtl">
       <body className={`bg-zinc-100 font-sans antialiased ${vazirmatn.variable}`}>
         <div className="mx-auto flex min-h-screen w-full max-w-prose flex-col items-center gap-10">
+          <header className="flex h-20 w-full items-center justify-between border border-t-0 border-zinc-300 px-3">
+            <Link href="/" className="text-3xl font-black">
+              بلاگی
+            </Link>
+            <button className="bg-black px-4 py-2 text-sm text-white">ورود / ثبت‌نام</button>
+          </header>
+
           {children}
 
           <footer className="mx-auto flex h-5 w-fit items-center justify-center border border-b-0 border-zinc-300 px-3 pt-1">
@@ -26,6 +36,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </a>
           </footer>
         </div>
+
+        <NProgressBar />
       </body>
     </html>
   );
