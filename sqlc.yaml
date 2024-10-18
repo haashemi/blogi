@@ -5,7 +5,7 @@ sql:
     queries: "backend/internal/postgres/queries"
     gen:
       go:
-        out: "internal/postgres"
+        out: "backend/internal/postgres"
         sql_package: "pgx/v5"
         emit_empty_slices: true
         emit_json_tags: true
