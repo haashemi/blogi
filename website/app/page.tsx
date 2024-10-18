@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { RiArrowLeftSLine } from "react-icons/ri";
 
-const latestPosts = new Array(3).fill(1);
+const latestPosts: number[] = new Array(3).fill(1);
 
 export default function Home() {
   return (
@@ -24,7 +24,7 @@ export default function Home() {
           {latestPosts.map((v) => (
             <Link
               key={v}
-              href="/"
+              href={`/blog/${v}`}
               className="group flex flex-col gap-2 border border-zinc-300 px-5 py-4 transition-all hover:-translate-y-0.5 hover:shadow-md focus:bg-black focus:text-white"
             >
               <h2 className="line-clamp-1 text-lg font-bold text-zinc-800 group-focus:text-zinc-100 sm:text-xl">
