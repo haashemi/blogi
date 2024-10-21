@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { RiArrowLeftSLine } from "react-icons/ri";
 
-const latestPosts: number[] = new Array(3).fill(1);
+import { blogs } from "./_api/blogs";
+import { BlogCard } from "./_components/blog-card";
 
-export default function Home() {
+export default async function Home() {
+  const data = await blogs("1");
+
   return (
     <main className="flex flex-1 flex-col gap-10 px-3">
       <div className="flex flex-col items-center gap-2 pb-6 pt-16">
@@ -21,25 +23,15 @@ export default function Home() {
         <h3 className="text-center text-lg font-bold">آخرین بلاگ‌ها</h3>
 
         <div className="flex flex-col gap-3">
-          {latestPosts.map((v) => (
-            <Link
-              className="group flex flex-col gap-2 border border-zinc-300 px-5 py-4 transition-all hover:-translate-y-0.5 hover:shadow-md focus:bg-black focus:text-white"
-              href={`/blog/${v}`}
-              key={v}
-            >
-              <h2 className="line-clamp-1 text-lg font-bold text-zinc-800 group-focus:text-zinc-100 sm:text-xl">
-                چگونه در ایران زنده بمونیم تو این وضعیت؟
-              </h2>
-
-              <p className="line-clamp-3 text-sm font-light text-zinc-700 group-focus:text-zinc-200">
-                مقاله‌ای من‌باب چگونگی زنده ماندن در کشوری که هر خری توش پیدا میشه و می زنه دهنتو میگاد و دیگه جونت به
-                لبت می رسه و می خوای خار همرو بگایی
-              </p>
-
-              <button className="mr-auto flex w-fit items-center text-nowrap text-xs" type="button">
-                مطالعه‌ <RiArrowLeftSLine className="size-4" />
-              </button>
-            </Link>
+          {data.posts.map((v) => (
+            <BlogCard
+              authorName={v.authorName}
+              id={v.id}
+              key={v.id}
+              publishedAt={v.publishedAt}
+              summary={v.summary}
+              title={v.title}
+            />
           ))}
         </div>
       </div>

@@ -5,8 +5,6 @@ import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import Link from "next/link";
 
-import { NProgressBar } from "./_components/progress-bar-provider";
-
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
   variable: "--font-vazirmatn",
@@ -39,8 +37,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </a>
           </footer>
         </div>
-
-        <NProgressBar />
       </body>
     </html>
   );
