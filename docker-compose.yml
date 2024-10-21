@@ -9,7 +9,7 @@ services:
       - back-tier
       - front-tier
     ports:
-      - 5676:8080
+      - 5571:8080
     volumes:
       - .env:/app/.env
     restart: always
@@ -20,12 +20,11 @@ services:
       context: ./website
       args:
         - WEB_APP_HOST=${WEB_APP_HOST}
-        - NEXT_PUBLIC_DASHBOARD_API_URL=${NEXT_PUBLIC_DASHBOARD_API_URL}
     env_file: .env
     networks:
       - front-tier
     ports:
-      - 5677:3000
+      - 5572:3000
     restart: always
 
   postgres:
