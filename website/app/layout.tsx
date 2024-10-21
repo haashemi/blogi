@@ -26,7 +26,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link className="text-3xl font-black" href="/">
               بلاگی
             </Link>
-            <button className="bg-black px-4 py-2 text-sm text-white">ورود / ثبت‌نام</button>
+            <Link className="bg-black px-4 py-2 text-sm text-white" href="/auth/sign-in">
+              ورود / ثبت‌نام
+            </Link>
           </header>
 
           {children}

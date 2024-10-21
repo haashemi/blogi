@@ -36,7 +36,7 @@ export default function Home() {
                 لبت می رسه و می خوای خار همرو بگایی
               </p>
 
-              <button className="mr-auto flex w-fit items-center text-nowrap text-xs">
+              <button className="mr-auto flex w-fit items-center text-nowrap text-xs" type="button">
                 مطالعه‌ <RiArrowLeftSLine className="size-4" />
               </button>
             </Link>
