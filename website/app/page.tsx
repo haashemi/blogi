@@ -12,7 +12,7 @@ export default function Home() {
           جایی برای نوشتن در مورد هر چیزی که به ذهنت خلاق نویسنده‌ها می‌رسه
         </p>
 
-        <Link href="/profile" className="mt-5 bg-black px-4 py-2 text-white">
+        <Link className="mt-5 bg-black px-4 py-2 text-white" href="/profile">
           بریم بنویسیم
         </Link>
       </div>
@@ -23,9 +23,9 @@ export default function Home() {
         <div className="flex flex-col gap-3">
           {latestPosts.map((v) => (
             <Link
-              key={v}
-              href={`/blog/${v}`}
               className="group flex flex-col gap-2 border border-zinc-300 px-5 py-4 transition-all hover:-translate-y-0.5 hover:shadow-md focus:bg-black focus:text-white"
+              href={`/blog/${v}`}
+              key={v}
             >
               <h2 className="line-clamp-1 text-lg font-bold text-zinc-800 group-focus:text-zinc-100 sm:text-xl">
                 چگونه در ایران زنده بمونیم تو این وضعیت؟

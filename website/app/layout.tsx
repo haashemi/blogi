@@ -1,6 +1,7 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
+
 import { Vazirmatn } from "next/font/google";
 import Link from "next/link";
 
@@ -18,11 +19,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fa" dir="rtl">
+    <html dir="rtl" lang="fa">
       <body className={`bg-zinc-100 font-sans antialiased ${vazirmatn.variable}`}>
         <div className="mx-auto flex min-h-screen w-full max-w-prose flex-col items-center gap-10">
           <header className="flex h-20 w-full items-center justify-between border border-t-0 border-zinc-300 px-3">
-            <Link href="/" className="text-3xl font-black">
+            <Link className="text-3xl font-black" href="/">
               بلاگی
             </Link>
             <button className="bg-black px-4 py-2 text-sm text-white">ورود / ثبت‌نام</button>
@@ -31,7 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
 
           <footer className="mx-auto flex h-5 w-fit items-center justify-center border border-b-0 border-zinc-300 px-3 pt-1">
-            <a href="https://www.haashemi.dev/" target="_blank" rel="noreferrer" className="text-xs text-zinc-800">
+            <a className="text-xs text-zinc-800" href="https://www.haashemi.dev/" rel="noreferrer" target="_blank">
               haashemi.dev
             </a>
           </footer>
