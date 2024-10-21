@@ -1,3 +1,3 @@
-export function NewBlogPage() {
+export default function NewBlogPage() {
   return <main>PLACEHOLDER</main>;
 }
