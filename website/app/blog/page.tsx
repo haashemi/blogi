@@ -2,11 +2,11 @@ import { blogs } from "@/app/_api/blogs";
 
 import { BlogCard } from "../_components/blog-card";
 
-export default async function BlogsPage({ searchParams: { page } }: { searchParams: { page: string } }) {
+export default async function BlogsPage({ searchParams: { page } }: { searchParams: { page?: string } }) {
   const data = await blogs(page);
 
   return (
-    <main>
+    <main className="px-3">
       <div className="flex flex-col gap-3">
         {data.posts.map((v) => (
           <BlogCard
