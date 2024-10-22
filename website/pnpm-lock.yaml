@@ -37,8 +37,8 @@ importers:
         version: 3.23.8
     devDependencies:
       '@fullstacksjs/eslint-config':
-        specifier: 11.3.3
-        version: 11.3.3(@typescript-eslint/eslint-plugin@8.11.0(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint-config-prettier@9.1.0(eslint@9.13.0(jiti@2.3.3)))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3)))(eslint@9.13.0(jiti@2.3.3))(prettier@3.3.3)(react@18.3.1)(tailwindcss@3.4.14)(typescript@5.6.3)
+        specifier: 11.4.0
+        version: 11.4.0(@typescript-eslint/eslint-plugin@8.11.0(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint-config-prettier@9.1.0(eslint@9.13.0(jiti@2.3.3)))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3)))(eslint@9.13.0(jiti@2.3.3))(prettier@3.3.3)(react@18.3.1)(tailwindcss@3.4.14)(typescript@5.6.3)
       '@fullstacksjs/tsconfig':
         specifier: 1.1.0
         version: 1.1.0(typescript@5.6.3)
@@ -46,8 +46,8 @@ importers:
         specifier: 0.5.15
         version: 0.5.15(tailwindcss@3.4.14)
       '@types/node':
-        specifier: 22.7.7
-        version: 22.7.7
+        specifier: 22.7.8
+        version: 22.7.8
       '@types/react':
         specifier: '18'
         version: 18.3.11
@@ -144,8 +144,8 @@ packages:
     resolution: {integrity: sha512-HFZ4Mp26nbWk9d/BpvP0YNL6W4UoZF0VFcTw/aPPA8RpOxeFQgK+ClABGgAUXs9Y/RGX/l1vOmrqz1MQt9MNuw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fullstacksjs/eslint-config@11.3.3':
-    resolution: {integrity: sha512-NmPMDxdSruo9+5MMXptexoYv6SmSZKJI2Hu9cBjZyQflCf4+IQgGGvX9H0cmraHhih6Fnn4gx1415l9k6M7zAw==}
+  '@fullstacksjs/eslint-config@11.4.0':
+    resolution: {integrity: sha512-T6hgoq8iqAkIJu+j+pPDT68RAmztozRiGTvdOBQO8CruD8ovIFX4KRyCN6XSPWMmR7HYbtOkUz1V3WoZW71T1A==}
     peerDependencies:
       cypress: '>=8'
       eslint: ^9
@@ -324,8 +324,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/node@22.7.7':
-    resolution: {integrity: sha512-SRxCrrg9CL/y54aiMCG3edPKdprgMVGDXjA3gB8UmmBW5TcXzRUYAh8EWzTnSJFAd1rgImPELza+A3bJ+qxz8Q==}
+  '@types/node@22.7.8':
+    resolution: {integrity: sha512-a922jJy31vqR5sk+kAdIENJjHblqcZ4RmERviFsER4WJcEONqxKcjNOlk0q7OUfrF5sddT+vng070cdfMlrPLg==}
 
   '@types/prop-types@15.7.13':
     resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
@@ -2243,7 +2243,7 @@ snapshots:
     dependencies:
       levn: 0.4.1
 
-  '@fullstacksjs/eslint-config@11.3.3(@typescript-eslint/eslint-plugin@8.11.0(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint-config-prettier@9.1.0(eslint@9.13.0(jiti@2.3.3)))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3)))(eslint@9.13.0(jiti@2.3.3))(prettier@3.3.3)(react@18.3.1)(tailwindcss@3.4.14)(typescript@5.6.3)':
+  '@fullstacksjs/eslint-config@11.4.0(@typescript-eslint/eslint-plugin@8.11.0(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint-config-prettier@9.1.0(eslint@9.13.0(jiti@2.3.3)))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.10.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3)))(eslint@9.13.0(jiti@2.3.3))(prettier@3.3.3)(react@18.3.1)(tailwindcss@3.4.14)(typescript@5.6.3)':
     dependencies:
       '@eslint-react/eslint-plugin': 1.15.0(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
       '@next/eslint-plugin-next': 14.2.15
@@ -2416,7 +2416,7 @@ snapshots:
   '@types/json5@0.0.29':
     optional: true
 
-  '@types/node@22.7.7':
+  '@types/node@22.7.8':
     dependencies:
       undici-types: 6.19.8
 
