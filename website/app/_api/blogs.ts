@@ -19,7 +19,7 @@ const data = new Array(12).fill({
   publishedAt: "2024-10-03T20:57:18.077417Z",
 });
 
-export const blogs = async (page: string) => {
+export const blogs = async (page: number | string = 1) => {
   return {
     posts: await BlogRespSchema.parseAsync(data),
     remainingPages: 2,
