@@ -74,8 +74,8 @@ func Run(conf APIConfig) {
 	{
 		authors := public.Group("/authors")
 		{
-			authors.GET("", api.getAuthors)          // db.[users].ListUsersPublic & db.[users].ListUsersPublicCount
-			authors.GET("/:username", api.getAuthor) // db.[users].GetUserPublic & db.[blogs].ListAuthorBlogs
+			authors.GET("", api.getAuthors)
+			authors.GET("/:username", api.getAuthor)
 		}
 
 		blogs := public.Group("/blogs")

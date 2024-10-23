@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/jackc/pgx/v5"
 	"github.com/labstack/echo/v4"
 )
 
@@ -54,6 +55,9 @@ func (api *API) getDashboardBlog(c echo.Context) error {
 
 	data, err := api.DB.GetBlog(c.Request().Context(), body.ID)
 	if err != nil {
+		if err == pgx.ErrNoRows {
+			return echo.NewHTTPError(http.StatusNotFound, "Blog not found")
+		}
 		c.Logger().Error("api.DB.GetBlog", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Database error.")
 	}

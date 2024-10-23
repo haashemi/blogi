@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/jackc/pgx/v5"
 	"github.com/labstack/echo/v4"
 )
 
@@ -55,6 +56,9 @@ func (api *API) getDashboardUser(c echo.Context) error {
 
 	data, err := api.DB.GetUser(c.Request().Context(), body.ID)
 	if err != nil {
+		if err == pgx.ErrNoRows {
+			return echo.NewHTTPError(http.StatusNotFound, "User not found")
+		}
 		c.Logger().Error("api.DB.GetUser", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Database error.")
 	}
