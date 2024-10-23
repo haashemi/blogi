@@ -9,11 +9,11 @@ import (
 )
 
 type Blog struct {
-	ID        int64              `json:"id\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0"`
-	AuthorID  int64              `json:"authorId\u00a0"`
-	Title     string             `json:"title\u00a0\u00a0\u00a0\u00a0\u00a0"`
-	Summary   string             `json:"summary\u00a0\u00a0\u00a0"`
-	Content   string             `json:"content\u00a0\u00a0\u00a0"`
+	ID        int64              `json:"id"`
+	AuthorID  int64              `json:"authorId"`
+	Title     string             `json:"title"`
+	Summary   string             `json:"summary"`
+	Content   string             `json:"content"`
 	CreatedAt pgtype.Timestamptz `json:"createdAt"`
 	UpdatedAt pgtype.Timestamptz `json:"updatedAt"`
 	RemovedAt pgtype.Timestamptz `json:"removedAt"`
