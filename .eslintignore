@@ -1,0 +1,4 @@
+# For some reasons, ESLint really likes to format and lint my goddamn golang 
+# files which results in lowering the golang's linter/formatter's performance.
+# So, by ignoring the golang file directories, hopefully it won't affect them anymore.
+./backend
