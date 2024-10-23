@@ -27,6 +27,9 @@ SELECT full_name, about_me FROM users WHERE username = $1;
 -- name: GetUserAuthData :one
 SELECT full_name, password, is_banned FROM users WHERE username = $1;
 
+-- name: GetUserPassword :one
+SELECT password FROM users WHERE id = $1;
+
 -- name: UpdateUser :exec
 UPDATE users
 SET 

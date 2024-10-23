@@ -106,6 +106,17 @@ func (q *Queries) GetUserFull(ctx context.Context, id int64) (GetUserFullRow, er
 	return i, err
 }
 
+const getUserPassword = `-- name: GetUserPassword :one
+SELECT password FROM users WHERE id = $1
+`
+
+func (q *Queries) GetUserPassword(ctx context.Context, id int64) (string, error) {
+	row := q.db.QueryRow(ctx, getUserPassword, id)
+	var password string
+	err := row.Scan(&password)
+	return password, err
+}
+
 const getUserPublic = `-- name: GetUserPublic :one
 SELECT full_name, about_me FROM users WHERE username = $1
 `
