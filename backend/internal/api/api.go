@@ -1,6 +1,8 @@
 package api
 
 import (
+	"blogi/internal/config"
+	"blogi/internal/postgres"
 	"blogi/pkg/validate"
 
 	"github.com/labstack/echo/v4"
@@ -10,7 +12,8 @@ import (
 type API struct{ APIConfig }
 
 type APIConfig struct {
-	APIAddress string
+	config.APIConfig
+	DB *postgres.Connection
 }
 
 func Run(conf APIConfig) {
@@ -22,6 +25,8 @@ func Run(conf APIConfig) {
 	e.Use(middleware.Secure())
 	e.Use(middleware.CORS())
 	e.Use(middleware.Gzip())
+
+	api := API{conf}
 
 	auth := e.Group("/auth")
 	{
@@ -45,9 +50,9 @@ func Run(conf APIConfig) {
 
 		users := dashboard.Group("/users")
 		{
-			users.GET("", nil)       // db.[users].ListUsers & db.[users].ListUsersCount
-			users.GET("/:id", nil)   // db.[users].GetUserFull
-			users.PATCH("/:id", nil) // db.[users].UpdateUserFull + TODO[invalidate]
+			users.GET("", api.getDashboardUsers)
+			users.GET("/:id", api.getDashboardUser)
+			users.PATCH("/:id", api.updateDashboardUser)
 		}
 	}
 
@@ -80,5 +85,5 @@ func Run(conf APIConfig) {
 		}
 	}
 
-	e.Logger.Fatal(e.Start(conf.APIAddress))
+	e.Logger.Fatal(e.Start(conf.APIAddr))
 }
