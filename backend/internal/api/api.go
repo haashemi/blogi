@@ -42,10 +42,10 @@ func Run(conf APIConfig) {
 	{
 		blog := dashboard.Group("/blogs")
 		{
-			blog.GET("", nil)        // db.[blogs].ListBlogs & db.[blogs].ListBlogsCount
-			blog.GET("/:id", nil)    // db.[blogs].GetBlog
-			blog.PATCH("/:id", nil)  // db.[blogs].UpdateBlog
-			blog.DELETE("/:id", nil) // db.[blogs].DeleteBlog
+			blog.GET("", api.getDashboardBlogs)
+			blog.GET("/:id", api.getDashboardBlog)
+			blog.PATCH("/:id", api.updateDashboardBlog)
+			blog.DELETE("/:id", api.deleteDashboardBlog)
 		}
 
 		users := dashboard.Group("/users")
@@ -59,14 +59,14 @@ func Run(conf APIConfig) {
 	// TODO: set user auth middleware
 	profile := e.Group("/profile")
 	{
-		profile.GET("", nil)   // db.[users].GetUser & db.[blogs].ListAuthorBlogs
-		profile.PATCH("", nil) // db.[users].UpdateUser
+		profile.GET("", api.getProfile)      // db.[users].GetUser & db.[blogs].ListAuthorBlogs
+		profile.PATCH("", api.updateProfile) // db.[users].UpdateUser
 
 		blog := profile.Group("/blog")
 		{
-			blog.POST("", nil)       // db.[blogs].CreateBlog
-			blog.PATCH("/:id", nil)  // db.[blogs].UpdateBlog
-			blog.DELETE("/:id", nil) // db.[blogs].DeleteBlog
+			blog.POST("", api.createBlog)       // db.[blogs].CreateBlog
+			blog.PATCH("/:id", api.updateBlog)  // db.[blogs].UpdateBlog
+			blog.DELETE("/:id", api.deleteBlog) // db.[blogs].DeleteBlog
 		}
 	}
 
@@ -74,14 +74,14 @@ func Run(conf APIConfig) {
 	{
 		authors := public.Group("/authors")
 		{
-			authors.GET("", nil)           // db.[users].ListUsersPublic & db.[users].ListUsersPublicCount
-			authors.GET("/:username", nil) // db.[users].GetUserPublic
+			authors.GET("", api.getAuthors)          // db.[users].ListUsersPublic & db.[users].ListUsersPublicCount
+			authors.GET("/:username", api.getAuthor) // db.[users].GetUserPublic & db.[blogs].ListAuthorBlogs
 		}
 
 		blogs := public.Group("/blogs")
 		{
-			blogs.GET("", nil)     // db.[blogs].ListBlogsPublic & db.[blogs].ListBlogsPublicCount
-			blogs.GET("/:id", nil) // db.[blogs].GetBlogPublic
+			blogs.GET("", api.getBlogs)
+			blogs.GET("/:id", api.getBlog)
 		}
 	}
 
