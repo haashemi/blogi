@@ -1,9 +1,8 @@
+import { blogs } from "@/app/_api/blogs";
+import { BlogCard } from "@/app/_components/blog-card";
+import { Input } from "@/app/_components/ui/input";
 import Link from "next/link";
 import { RiSearch2Line } from "react-icons/ri";
-
-import { blogs } from "./_api/blogs";
-import { BlogCard } from "./_components/blog-card";
-import { Input } from "./_components/ui/input";
 
 export default async function Home() {
   const data = await blogs();
