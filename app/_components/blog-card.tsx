@@ -1,7 +1,6 @@
+import { farsiDates } from "@/app/_lib/farsiDates";
 import Link from "next/link";
 import { RiArrowLeftSLine } from "react-icons/ri";
-
-import { farsiDates } from "../_lib/farsiDates";
 
 export interface BlogCardProps {
   id: number;

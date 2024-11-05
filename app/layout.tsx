@@ -4,8 +4,6 @@ import type { Metadata, Viewport } from "next";
 
 import { Vazirmatn } from "next/font/google";
 
-import { Footer, Header } from "./_components/app-layout";
-
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
   variable: "--font-vazirmatn",
@@ -33,11 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body
         className={`bg-zinc-100 font-sans text-black antialiased dark:bg-zinc-950 dark:text-white ${vazirmatn.variable}`}
       >
-        <div className="mx-auto flex min-h-screen w-full max-w-prose flex-col items-center gap-10">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <div className="mx-auto flex min-h-screen w-full max-w-prose flex-col items-center gap-10">{children}</div>
       </body>
     </html>
   );

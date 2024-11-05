@@ -6,7 +6,7 @@ export const Header = () => {
       <Link className="text-3xl font-black" href="/">
         بلاگی
       </Link>
-      <Link className="bg-black px-4 py-2 text-sm text-white" href="/auth/sign-in">
+      <Link className="bg-black px-4 py-2 text-sm text-white" href="/auth">
         ورود / ثبت‌نام
       </Link>
     </header>

@@ -1,6 +1,5 @@
 import { blogs } from "@/app/_api/blogs";
-
-import { BlogCard } from "../_components/blog-card";
+import { BlogCard } from "@/app/_components/blog-card";
 
 export default async function BlogsPage({ searchParams: { page } }: { searchParams: { page?: string } }) {
   const data = await blogs(page);
