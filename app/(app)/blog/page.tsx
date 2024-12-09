@@ -1,8 +1,16 @@
-import { blogs } from "@/app/_api/blogs";
+import { getBlogs } from "@/app/_api/getBlogs";
 import { BlogCard } from "@/app/_components/blog-card";
 
-export default async function BlogsPage({ searchParams: { page } }: { searchParams: { page?: string } }) {
-  const data = await blogs(page);
+interface BlogsPageProps {
+  searchParams: Promise<{
+    page?: string;
+    query?: string;
+  }>;
+}
+
+export default async function BlogsPage({ searchParams }: BlogsPageProps) {
+  const { page, query } = await searchParams;
+  const data = await getBlogs(page);
 
   return (
     <main className="px-3">

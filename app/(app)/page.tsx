@@ -1,11 +1,11 @@
-import { blogs } from "@/app/_api/blogs";
+import { getBlogs } from "@/app/_api/getBlogs";
 import { BlogCard } from "@/app/_components/blog-card";
 import { Input } from "@/app/_components/ui/input";
 import Link from "next/link";
 import { RiSearch2Line } from "react-icons/ri";
 
 export default async function Home() {
-  const data = await blogs();
+  const data = await getBlogs();
 
   return (
     <main className="flex flex-1 flex-col gap-10 px-3">
