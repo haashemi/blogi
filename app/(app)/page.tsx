@@ -26,11 +26,13 @@ export default async function Home() {
         <h3 className="text-center text-lg font-bold">آخرین بلاگ‌ها</h3>
 
         <div className="flex flex-col gap-3">
-          {data.posts.map((v) => (
+          {data.posts.map((v, i) => (
             <BlogCard
               authorName={v.authorName}
               id={v.id}
-              key={v.id}
+              // TODO:
+              // eslint-disable-next-line @eslint-react/no-array-index-key
+              key={i}
               publishedAt={v.publishedAt}
               summary={v.summary}
               title={v.title}
