@@ -27,7 +27,7 @@
     "zod": "3.24.1"
   },
   "devDependencies": {
-    "@fullstacksjs/eslint-config": "11.4.0",
+    "@fullstacksjs/eslint-config": "11.5.0",
     "@fullstacksjs/tsconfig": "1.1.0",
     "@tailwindcss/typography": "0.5.15",
     "@types/node": "22.10.2",
